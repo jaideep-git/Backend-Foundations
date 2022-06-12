@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+<body>
+    <%- include('../partials/navbar') %>
+    
+    <div class="container">
+        <h1>Post your comment</h1>
+
+        <form action="/comments" method="post">
+            <section>
+                <label for="username"> Enter Username:</label>
+                <input type="text" id="username" name="username" placeholder="username">
+            </section>
+        
+            <section>
+                <label for="comment"> Comment:</label>
+                <br>
+                <textarea name="comment" id="comment" cols="30" rows="5"></textarea>
+            </section>
+            <button>Submit</button>
+        </form>
+
+        <a href="/comments">See all Comments</a>
+    </div>
+</body>
+</html>

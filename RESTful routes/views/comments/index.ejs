@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+<body>
+    <%- include('../partials/navbar') %>
+    
+    <div class="container">
+        <h1>Comments</h1>
+
+        <ul>
+            <% for(c of comments){ %>
+                <li>
+                    <%= c.comment %> - <b><%= c.username %> </b>
+                    <a href="/comments/details/<%= c.id %> "> Details</a>
+                    <a href="/comments/<%= c.id %>/edit ">Edit</a>
+                    <form method="POST" action="/comments/<%= c.id %>?_method=DELETE">
+                        <button>Delete</button>
+                    </form>
+                </li>
+                
+            <% } %>  
+        </ul>
+
+        <button><a href="/comments/new">Add New Comment</a></button>
+    </div>
+</body>
+</html>

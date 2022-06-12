@@ -47,6 +47,7 @@ productSchema.methods.toggleOnSale = function () {
     return this.save();
 };
 
+// * Static Method
 productSchema.statics.fireSale = async function () {
     return await this.updateMany({}, { onSale: true, price:1 }); // Sets all products on Sale
 }

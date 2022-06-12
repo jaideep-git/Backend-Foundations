@@ -1,0 +1,15 @@
+<%- include('partials/header') %> 
+<body>
+    <%- include('partials/navbar') %>
+    <div class="container">
+        <h1>All The Dogs</h1>
+
+        <!-- LOOP -->
+        <ul>
+            <% for( dog of favDogs){ %> 
+                <li><%= dog %> </li>
+            <% } %> 
+        </ul>
+    </div>
+</body>
+</html>

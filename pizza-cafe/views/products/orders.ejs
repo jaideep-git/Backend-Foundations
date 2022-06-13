@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+<body>
+    <%- include('../partials/navbar') %>
+    
+    <div class="container">
+        <h2>Your Orders</h2>
+
+        <ul>
+            <% for(order of orders){ %>
+                <li>
+                    <%= order.size %> <b><%= order.pizzaName %></b>  - $<%= order.price %>
+                    <a href="/orders/<%= order.id %>/edit">Change Size</a> 
+                    <form action="/orders/cancel/<%=order.id%>?_method=DELETE" method="POST">
+                        <button>Cancel Order</button>
+                    </form>
+                </li>
+                
+            <% } %>  
+        </ul>
+
+        <a href="/">Place New Order</a>
+    </div>
+    
+</body>
+</html>  

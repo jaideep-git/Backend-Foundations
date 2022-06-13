@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+<body>
+    <%- include('../partials/navbar') %>
+    
+    <div class="container">
+        <h1>Welcome to Pizza Cafe</h1>
+
+        <h2>Available Pizza's</h2>
+
+        <ul>
+            <% for(pizza of pizzaTypes){ %>
+                <li>
+                    <%= pizza.size %> <b><%= pizza.pizzaName %></b>  - $<%= pizza.price %> 
+                    <h4><a href="/order/<%= pizza.id %> ">Order Now</a></h4>
+                </li>
+                
+            <% } %>  
+        </ul>
+
+        <button><a href="/new">Create New Pizza</a></button>
+    </div>
+</body>
+</html>

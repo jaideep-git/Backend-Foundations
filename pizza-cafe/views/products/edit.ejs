@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+<body>
+    <%- include('../partials/navbar') %>
+
+    <section class="container">
+        <h1> Edit Your Order</h1>
+
+        <form action="/orders/edit/<%= order.id %>?_method=PUT" method="post">
+            <section>
+                <h4><%= order.pizzaName %> </h4>
+            </section>
+            
+            <section>
+                <label for="comment"> Change Size:</label>
+                <br>
+                <select name="size" id="size">
+                    <% for(let size of pizzaSize){ %>
+                    <option value="<%=size%>" <%= order.size === size ? 'selected': '' %>><%=size%></option>
+                    <% } %>
+                </select>
+                <h5>Price - $<%= order.price %> </h5>
+            </section>
+
+            <button>Change order</button>
+        </form>
+        <a href="/orders">See all Orders</a>
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+<body>
+    <%- include('../partials/navbar') %>
+    
+    <div class="container">
+        <h2>Thanks for ordering :)</h2>
+        <p> Your Order <b> <%= product.size %> <%= product.pizzaName %> </b>has been placed. </p>
+        <p> Please pay $<%= pizza.price %> on delivery.</p>
+        <a href="/">New Order</a><a class="nav-link" href="/orders">Your Orders</a>
+    </div>
+    
+</body>
+</html>  

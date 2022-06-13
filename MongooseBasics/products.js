@@ -52,6 +52,15 @@ productSchema.statics.fireSale = async function () {
     return await this.updateMany({}, { onSale: true, price:1 }); // Sets all products on Sale
 }
 
+// * Mongoose Middleware
+productSchema.pre('save', async function () {
+    console.log("About to Save!!!")
+})
+
+productSchema.post('save', async function () {
+    console.log("Just Saved!!!")
+})
+
 const Products = mongoose.model("Products", productSchema);
 
 // * Adding products to database
